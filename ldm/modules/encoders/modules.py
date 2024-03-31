@@ -270,7 +270,7 @@ class FrozenOpenCLIPImageEncoder(AbstractEncoder):
         return self(image)
 
 sys.path.append("./dinov2")
-import hubconf
+from dinov2 import hubconf
 from omegaconf import OmegaConf
 config_path = './configs/anydoor.yaml'
 config = OmegaConf.load(config_path)
