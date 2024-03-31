@@ -30,7 +30,7 @@ def _make_dinov2_model(
     pretrained: bool = True,
     **kwargs,
 ):
-    from dinov2.dinov2.models import vision_transformer as vits
+    from dinov2.models import vision_transformer as vits
 
     model_name = _make_dinov2_model_name(arch_name, patch_size)
     vit_kwargs = dict(
