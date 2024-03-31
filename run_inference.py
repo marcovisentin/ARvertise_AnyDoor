@@ -227,9 +227,9 @@ if __name__ == '__main__':
     # bg_mask_path = './examples/TestDreamBooth/BG/test_image_mask.png'
     # save_path = './examples/TestDreamBooth/GEN/gen_res.png'
     
-    reference_image_path = './my_assets/test_image.png'
-    bg_image_path = './my_assets/test_image_mask.png'
-    bg_mask_path = './my_assets/foreground_image.png'
+    reference_image_path = './my_assets/foreground_image.png'
+    bg_image_path = './my_assets/test_image.png'
+    bg_mask_path = './my_assets/test_image_mask.png'
     save_path = './my_assets/result_image.png' 
 
     # reference image + reference mask
