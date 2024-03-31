@@ -21,7 +21,7 @@ if save_memory:
     enable_sliced_attention()
 
 
-config = OmegaConf.load('./configs/inference.yaml')
+config = OmegaConf.load('/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/inference.yaml') #NOTE: for HPC path
 model_ckpt =  config.pretrained_model
 model_config = config.config_file
 
