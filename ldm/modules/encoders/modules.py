@@ -269,7 +269,6 @@ class FrozenOpenCLIPImageEncoder(AbstractEncoder):
     def encode(self, image):
         return self(image)
 
-sys.path.append("./dinov2") #NOTE: for HPC
 from dinov2 import hubconf
 from omegaconf import OmegaConf
 config_path = '/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/anydoor.yaml' # NOTE: for HPC
