@@ -41,7 +41,7 @@ model.sd_locked = sd_locked
 model.only_mid_control = only_mid_control
 
 # Datasets
-DConf = OmegaConf.load('/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/datasets.yaml')
+DConf = OmegaConf.load('./configs/datasets.yaml')
 dataset1 = YoutubeVOSDataset(**DConf.Train.YoutubeVOS)  
 dataset2 =  SaliencyDataset(**DConf.Train.Saliency) 
 dataset3 = VIPSegDataset(**DConf.Train.VIPSeg) 

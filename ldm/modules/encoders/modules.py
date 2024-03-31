@@ -271,7 +271,7 @@ class FrozenOpenCLIPImageEncoder(AbstractEncoder):
 
 from dinov2 import hubconf
 from omegaconf import OmegaConf
-config_path = '/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/anydoor.yaml'
+config_path = './configs/anydoor.yaml'
 config = OmegaConf.load(config_path)
 DINOv2_weight_path = config.model.params.cond_stage_config.weight
 

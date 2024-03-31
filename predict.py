@@ -147,7 +147,7 @@ class Predictor(BasePredictor):
         disable_verbosity()
         cv2.setNumThreads(0)
         cv2.ocl.setUseOpenCL(False)
-        config = OmegaConf.load('/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/inference.yaml')
+        config = OmegaConf.load('./configs/inference.yaml')
         model_ckpt =  config.pretrained_model
         model_config = config.config_file
         model = create_model(model_config).cpu()
