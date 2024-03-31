@@ -34,7 +34,7 @@ n_gpus = 2
 accumulate_grad_batches=1
 
 # First use cpu to load models. Pytorch Lightning will automatically move it to GPUs.
-model = create_model('/rds/general/user/mv320/home/projects/ARvertise/ARvertise_AnyDoor/configs/anydoor.yaml').cpu()
+model = create_model('./configs/anydoor.yaml').cpu()
 model.load_state_dict(load_state_dict(resume_path, location='cpu'))
 model.learning_rate = learning_rate
 model.sd_locked = sd_locked
