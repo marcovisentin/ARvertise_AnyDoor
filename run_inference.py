@@ -230,7 +230,6 @@ if __name__ == '__main__':
     reference_image_path = './my_assets/foreground_image.png'
     bg_image_path = './my_assets/test_image.png'
     bg_mask_path = './my_assets/test_image_mask.png'
-    save_path = './my_assets/result_image.png' 
 
     # reference image + reference mask
     # You could use the demo of SAM to extract RGB-A image with masks
@@ -250,12 +249,13 @@ if __name__ == '__main__':
     tar_mask = cv2.imread(bg_mask_path)[:,:,0] > 128
     tar_mask = tar_mask.astype(np.uint8)
     
-    gen_image = inference_single_image(ref_image, ref_mask, back_image.copy(), tar_mask)
-    h,w = back_image.shape[0], back_image.shape[0]
-    ref_image = cv2.resize(ref_image, (w,h))
-    vis_image = cv2.hconcat([ref_image, back_image, gen_image])
-    
-    cv2.imwrite(save_path, vis_image [:,:,::-1])
+    for i in range(10):
+        gen_image = inference_single_image(ref_image, ref_mask, back_image.copy(), tar_mask)
+        h,w = back_image.shape[0], back_image.shape[0]
+        ref_image = cv2.resize(ref_image, (w,h))
+        vis_image = cv2.hconcat([ref_image, back_image, gen_image])
+        save_path = './my_assets/result_image_{}.png'.format(i)
+        cv2.imwrite(save_path, vis_image [:,:,::-1])
     
     # #'''
     # # ==== Example for inferring VITON-HD Test dataset ===
